@@ -14,21 +14,8 @@
               "type": "empty",
               "state": {}
             }
-          },
-          {
-            "id": "93bbee52ddc44e90",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Student Collaboration.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -94,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Student Collaboration.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Student Collaboration.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Student Collaboration.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -155,10 +138,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "93bbee52ddc44e90",
+  "active": "9b29153e7c89ff18",
   "lastOpenFiles": [
-    "requirements.txt",
     "Student Collaboration.md",
+    "README.md",
+    "requirements.txt",
     "Untitled"
   ]
 }
