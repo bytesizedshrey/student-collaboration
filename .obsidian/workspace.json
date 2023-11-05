@@ -140,9 +140,18 @@
   },
   "active": "9b29153e7c89ff18",
   "lastOpenFiles": [
+    "db.sqlite3-journal",
+    "student_collebration/__pycache__/wsgi.cpython-312.pyc",
+    "db.sqlite3",
+    "student_collebration/__pycache__/urls.cpython-312.pyc",
+    "student_collebration/__pycache__/__init__.cpython-312.pyc",
+    "student_collebration/__pycache__/settings.cpython-312.pyc",
+    "student_collebration/__pycache__",
+    "student_collebration/__init__.py",
+    "student_collebration/settings.py",
+    "student_collebration/urls.py",
+    "student_collebration/wsgi.py",
     "Student Collaboration.md",
-    "README.md",
-    "requirements.txt",
-    "Untitled"
+    "README.md"
   ]
 }
