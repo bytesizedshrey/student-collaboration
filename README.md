@@ -3,7 +3,7 @@
 ## Anaconda
 
 If don't know about anaconda watch this video.
-Link:- [anaconda](https://www.youtube.com/watch?v=23aQdrS58e0)\
+Link:- [anaconda](https://www.youtube.com/watch?v=23aQdrS58e0)
 After watching the video run this commands.
 
 _create a virtual env_

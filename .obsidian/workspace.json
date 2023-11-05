@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "7e2ea89a1ecab277",
+        "id": "e24ffa5c36c80a0d",
         "type": "tabs",
         "children": [
           {
-            "id": "9b29153e7c89ff18",
+            "id": "538ff6c3cf35956a",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -138,8 +138,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9b29153e7c89ff18",
+  "active": "538ff6c3cf35956a",
   "lastOpenFiles": [
+    "README.md",
     "db.sqlite3-journal",
     "student_collebration/__pycache__/wsgi.cpython-312.pyc",
     "db.sqlite3",
@@ -150,8 +151,6 @@
     "student_collebration/__init__.py",
     "student_collebration/settings.py",
     "student_collebration/urls.py",
-    "student_collebration/wsgi.py",
-    "Student Collaboration.md",
-    "README.md"
+    "Student Collaboration.md"
   ]
 }
