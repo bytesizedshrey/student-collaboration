@@ -31,15 +31,21 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # django channels
+    "channels",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    # django daphne
+    "daphne",
     "django.contrib.staticfiles",
     # my apps
     "base",
+    "chat",
 ]
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -70,6 +76,13 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "Student_collaboration.wsgi.application"
+ASGI_APPLICATION = "Student_collaboration.asgi.application"
+
+CHANNEL_LAYERS = {
+    'default':{
+        'BACKEND' : 'channels.layers.InMemoryChannelLayer'
+    }
+}
 
 
 # Database
@@ -118,6 +131,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+STATICFILES_DIRS = [BASE_DIR / "static", BASE_DIR / "chat" / "static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
