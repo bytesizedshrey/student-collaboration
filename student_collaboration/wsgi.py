@@ -1,5 +1,5 @@
 """
-WSGI config for student_collaboration project.
+WSGI config for Student_collaboration project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "student_collaboration.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Student_collaboration.settings")
 
 application = get_wsgi_application()
