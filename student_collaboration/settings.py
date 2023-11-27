@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # app for channels
-    'daphne',
+    "daphne",
     # my apps
     "chat",
     "home",
