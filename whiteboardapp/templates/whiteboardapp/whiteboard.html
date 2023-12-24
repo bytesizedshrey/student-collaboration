@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Collaborative Whiteboard - Home</title>
+</head>
+<body>
+    <h1>Drawings List</h1>
+    <ul>
+        {% for drawing in drawings %}
+            <li><a href="{% url 'drawing_detail' drawing.id %}">{{ drawing.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

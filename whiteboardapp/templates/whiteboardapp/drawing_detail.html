@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Collaborative Whiteboard - {{ drawing.title }}</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>{{ drawing.title }}</h1>
+    <canvas id="whiteboard" width="800" height="600"></canvas>
+
+    <script>
+        const drawingCanvas = document.getElementById('whiteboard');
+        const ctx = drawingCanvas.getContext('2d');
+
+        // Initialize WebSocket connection
+        const drawingSocket = new WebSocket(`ws://{{ request.get_host }}/ws/drawing/{{ drawing.id }}/`);
+
+        drawingSocket.onopen = function(event) {
+            console.log('WebSocket connection opened');
+            // Add event listeners for drawing
+            drawingCanvas.addEventListener('mousedown', startDrawing);
+            drawingCanvas.addEventListener('mousemove', draw);
+            drawingCanvas.addEventListener('mouseup', endDrawing);
+        };
+
+        drawingSocket.onmessage = function(event) {
+            // Handle incoming drawing data from WebSocket
+            const drawingData = JSON.parse(event.data);
+            // Process drawingData to update the canvas
+            // Example: For drawing lines
+            ctx.beginPath();
+            ctx.moveTo(drawingData.prevX, drawingData.prevY);
+            ctx.lineTo(drawingData.currX, drawingData.currY);
+            ctx.strokeStyle = drawingData.color;
+            ctx.lineWidth = drawingData.lineWidth;
+            ctx.stroke();
+        };
+
+        drawingSocket.onerror = function(event) {
+            console.error('WebSocket error:', event);
+        };
+
+        // Function to send drawing data to the server via WebSocket
+        function sendDrawingData(data) {
+            drawingSocket.send(JSON.stringify(data));
+        }
+
+        let isDrawing = false;
+        let prevX = 0;
+        let prevY = 0;
+
+        function startDrawing(event) {
+            isDrawing = true;
+            prevX = event.clientX - drawingCanvas.getBoundingClientRect().left;
+            prevY = event.clientY - drawingCanvas.getBoundingClientRect().top;
+        }
+
+        function draw(event) {
+            if (isDrawing) {
+                const currX = event.clientX - drawingCanvas.getBoundingClientRect().left;
+                const currY = event.clientY - drawingCanvas.getBoundingClientRect().top;
+
+                const drawingData = {
+                    prevX,
+                    prevY,
+                    currX,
+                    currY,
+                    color: '#000000', // Set color as needed
+                    lineWidth: 2, // Set line width as needed
+                };
+
+                sendDrawingData(drawingData);
+
+                prevX = currX;
+                prevY = currY;
+            }
+        }
+
+        function endDrawing(event) {
+            isDrawing = false;
+        }
+    </script>
+</body>
+</html>
